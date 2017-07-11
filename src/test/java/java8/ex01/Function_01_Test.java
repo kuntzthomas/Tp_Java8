@@ -20,9 +20,14 @@ public class Function_01_Test {
 	// TODO le nom sera de la forme "last_<ENTIER>"
 	// TODO l'age sera de la forme "<ENTIER>"
 	// TODO le mot de passe sera de la forme "pass_<ENTIER>"
-	private Function<Integer, Person> intToPerson = i -> new Person("first_".concat(Integer.toString(i)),
-			"last_".concat(Integer.toString(i)), i, "pass_".concat(Integer.toString(i)));
-
+	private Function<Integer, Person> intToPerson = i -> {
+		Person p = new Person();
+		p.setAge(i);
+		p.setFirstname("first_" + i);
+		p.setLastname("last_" + i);
+		p.setPassword("pass_" + i);
+		return p;
+	};
 	// end::intToPerson[]
 
 	@Test
